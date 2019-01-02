@@ -150,7 +150,7 @@ public class TestChannel {
 		outChannel.close();
 	}
 	
-	//使用直接缓冲区完成文件的复制(内存映射文件)
+	//使用直接缓冲区完成文件的复制(内存映射文件)  只有ByteBuffer  字节操作有关 支持直接缓存区
 	@Test
 	public void test2() throws IOException{//2127-1902-1777
 		long start = System.currentTimeMillis();
