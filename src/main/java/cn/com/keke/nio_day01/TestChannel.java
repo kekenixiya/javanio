@@ -158,7 +158,7 @@ public class TestChannel {
 		FileChannel inChannel = FileChannel.open(Paths.get("d:/aa112.mp4"), StandardOpenOption.READ);
 		FileChannel outChannel = FileChannel.open(Paths.get("d:/aa222.mp4"), StandardOpenOption.WRITE, StandardOpenOption.READ, StandardOpenOption.CREATE);
 		
-		//内存映射文件
+		//内存映射文件 物理内存中操作
 		MappedByteBuffer inMappedBuf = inChannel.map(MapMode.READ_ONLY, 0, inChannel.size());
 		MappedByteBuffer outMappedBuf = outChannel.map(MapMode.READ_WRITE, 0, inChannel.size());
 		
