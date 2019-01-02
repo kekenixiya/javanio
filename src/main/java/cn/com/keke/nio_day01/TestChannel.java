@@ -155,8 +155,8 @@ public class TestChannel {
 	public void test2() throws IOException{//2127-1902-1777
 		long start = System.currentTimeMillis();
 		
-		FileChannel inChannel = FileChannel.open(Paths.get("d:/1.mkv"), StandardOpenOption.READ);
-		FileChannel outChannel = FileChannel.open(Paths.get("d:/2.mkv"), StandardOpenOption.WRITE, StandardOpenOption.READ, StandardOpenOption.CREATE);
+		FileChannel inChannel = FileChannel.open(Paths.get("d:/aa112.mp4"), StandardOpenOption.READ);
+		FileChannel outChannel = FileChannel.open(Paths.get("d:/aa222.mp4"), StandardOpenOption.WRITE, StandardOpenOption.READ, StandardOpenOption.CREATE);
 		
 		//内存映射文件
 		MappedByteBuffer inMappedBuf = inChannel.map(MapMode.READ_ONLY, 0, inChannel.size());
