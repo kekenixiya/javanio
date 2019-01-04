@@ -18,7 +18,7 @@ public class TestBlockingNIO2 {
 	public void client() throws IOException{
 		SocketChannel sChannel = SocketChannel.open(new InetSocketAddress("127.0.0.1", 9898));
 		
-		FileChannel inChannel = FileChannel.open(Paths.get("1.jpg"), StandardOpenOption.READ);
+		FileChannel inChannel = FileChannel.open(Paths.get("11.jpg"), StandardOpenOption.READ);
 		
 		ByteBuffer buf = ByteBuffer.allocate(1024);
 		
@@ -27,7 +27,7 @@ public class TestBlockingNIO2 {
 			sChannel.write(buf);
 			buf.clear();
 		}
-		
+		//如果此处不调用 sChannel.shutdownOutput() 客户端无法中断。  设置通道设置为非阻塞模式
 		sChannel.shutdownOutput();
 		
 		//接收服务端的反馈
